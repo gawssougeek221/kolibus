@@ -1,0 +1,156 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================================
+   YOOBANTÉ — Design Tokens (identité logo)
+   Vert forêt #084C41 · Ambre soleil #F9A50A · Blanc / beige épuré
+   ============================================================ */
+@theme {
+  --color-yb-green: #084C41;
+  --color-yb-green-deep: #06332B;
+  --color-yb-green-soft: #E3F0EC;
+  --color-yb-green-mid: #2E8069;
+  --color-yb-amber: #F9A50A;
+  --color-yb-amber-soft: #FDF2DC;
+  --color-yb-amber-deep: #C27B06;
+  --color-yb-cream: #F7F2E7;
+  --color-yb-beige: #F2ECDD;
+  --color-yb-paper: #FFFFFF;
+  --color-yb-ink: #14231E;
+  --color-yb-slate: #5F6B62;
+  --color-yb-line: #E7E2D4;
+  --color-yb-red: #D64545;
+  --color-yb-red-soft: #FBE9E9;
+  --color-yb-blue: #2C6BA8;
+  --color-yb-blue-soft: #E4EEF7;
+  --color-yb-violet: #6B4FA1;
+  --color-yb-violet-soft: #EFE9F8;
+
+  /* ===== KoliBus — couleurs officielles (bannière fournie) ===== */
+  --color-kb-green: #123D33;      /* fond bannière officielle */
+  --color-kb-green-dark: #0C2E27; /* déclinaison plus profonde */
+  --color-kb-green-soft: #E4EFEA; /* fond doux */
+  --color-kb-amber: #F6C25C;      /* « Bus » dans la bannière */
+  --color-kb-amber-deep: #B8860B; /* variante texte */
+
+  --radius-yb: 14px;
+
+  --animate-yb-ping: yb-ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+  --animate-yb-ping-slow: yb-ping 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+  --animate-yb-pop: yb-pop 0.32s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  --animate-yb-shimmer: yb-shimmer 1.6s linear infinite;
+  --animate-yb-rise: yb-rise 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-yb-breathe: yb-breathe 2.6s ease-in-out infinite;
+  --animate-yb-drive: yb-drive 3.2s linear infinite;
+  --animate-yb-spin-slow: yb-spin 9s linear infinite;
+  --animate-yb-fade: yb-fade 0.4s ease both;
+  --animate-yb-pulse-dot: yb-pulse-dot 1.4s ease-in-out infinite;
+}
+
+@keyframes yb-ping {
+  0% { transform: scale(0.4); opacity: 0.75; }
+  80%, 100% { transform: scale(2.1); opacity: 0; }
+}
+@keyframes yb-pop {
+  0% { transform: scale(0.82); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes yb-shimmer {
+  0% { background-position: -360px 0; }
+  100% { background-position: 360px 0; }
+}
+@keyframes yb-rise {
+  0% { transform: translateY(14px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+@keyframes yb-breathe {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.045); opacity: 0.92; }
+}
+@keyframes yb-drive {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(132px); }
+}
+@keyframes yb-spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes yb-fade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes yb-pulse-dot {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.35); }
+}
+
+.yb-shimmer-bg {
+  background: linear-gradient(90deg, #F0EBDE 25%, #FAF7EE 50%, #F0EBDE 75%);
+  background-size: 720px 100%;
+  animation: yb-shimmer 1.6s linear infinite;
+}
+
+/* ============================================================
+   Base shadcn tokens
+   ============================================================ */
+:root {
+  --background: #F7F2E7;
+  --foreground: #14231E;
+  --card: #FFFFFF;
+  --card-foreground: #14231E;
+  --popover: #FFFFFF;
+  --popover-foreground: #14231E;
+  --primary: #084C41;
+  --primary-foreground: #FFFFFF;
+  --secondary: #E3F0EC;
+  --secondary-foreground: #06332B;
+  --muted: #F2EFE4;
+  --muted-foreground: #5F6B62;
+  --accent: #FDF2DC;
+  --accent-foreground: #C27B06;
+  --destructive: #D64545;
+  --destructive-foreground: #FFFFFF;
+  --border: #E7E2D4;
+  --input: #E7E2D4;
+  --ring: #084C41;
+  --radius: 0.875rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.yb-scroll::-webkit-scrollbar { width: 6px; height: 6px; }
+.yb-scroll::-webkit-scrollbar-thumb { background: #D4CDB8; border-radius: 99px; }
+.yb-scroll::-webkit-scrollbar-track { background: transparent; }
+.yb-scroll-dark::-webkit-scrollbar { width: 6px; }
+.yb-scroll-dark::-webkit-scrollbar-thumb { background: #1E5446; border-radius: 99px; }
+.yb-scroll-dark::-webkit-scrollbar-track { background: transparent; }

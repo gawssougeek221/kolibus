@@ -1,0 +1,47 @@
+{
+  "expo": {
+    "name": "KoliBus Transport",
+    "slug": "kolibus-transport",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "scheme": "kolibus",
+    "splash": {
+      "backgroundColor": "#123D33",
+      "resizeMode": "contain"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "bundleIdentifier": "sn.kolibus.transport",
+      "supportsTablet": false,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "KoliBus transmet la position du véhicule pendant vos missions actives, pour permettre aux clients de suivre leur colis.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "KoliBus transmet la position du véhicule pendant vos missions actives, même application en arrière-plan, pour un suivi fiable.",
+        "NSLocationAlwaysUsageDescription": "KoliBus transmet la position du véhicule pendant vos missions actives uniquement.",
+        "UIBackgroundModes": ["location"]
+      }
+    },
+    "android": {
+      "package": "sn.kolibus.transport",
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "FOREGROUND_SERVICE"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "KoliBus transmet la position du véhicule pendant vos missions actives uniquement.",
+          "isAndroidBackgroundLocationEnabled": true
+        }
+      ]
+    ],
+    "extra": {
+      "supabaseUrl": "",
+      "supabaseAnonKey": ""
+    }
+  }
+}
