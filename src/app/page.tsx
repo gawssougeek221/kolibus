@@ -82,10 +82,10 @@ export default function Home() {
           </Link>
         </div>
 
-        <p className="mt-auto pt-8 text-[10px] leading-relaxed text-white/40">
+          <p className="mt-auto pt-8 text-[10px] leading-relaxed text-white/40">
           MVP pilote — aucune fonctionnalité simulée n&apos;est présentée comme réelle : les partenaires d&apos;exemple sont
           marqués « démo », la simulation GPS est explicitement étiquetée, et les paiements réels ne sont pas intégrés.
-          Mode démo actif tant que Supabase n&apos;est pas connecté (voir docs/supabase-setup.md).
+          Backend Supabase connecté (Auth + RLS + RPC) — le mode démo local reste disponible hors connexion.
         </p>
       </div>
     </main>
